@@ -1,0 +1,16 @@
+{
+  "documents": [
+    {
+      "id": "d1df73dc-1485-4242-b688-aa23ddf1d059",
+      "name": "KMRL_Train_Operations_Circular.pdf",
+      "type": "application/pdf",
+      "size": 2916,
+      "text": "Kochi Metro Rail Limited (KMRL)\nTrain Operations Circular\nReference No: KMRL/OPS/2026/0417\nDate: 17 April 2026\nSubject: Revised Peak Hour Train Schedule and Passenger\nAssistance Measures\nRevised peak hour services will be implemented from 20 April 2026. Additional train frequency shall\noperate between Aluva and SN Junction during rush hours.\nInstructions:\n1. Morning peak frequency every 6 minutes from 07:00 to 10:00 hrs.\n2. Evening peak frequency every 6 minutes from 17:00 to 20:30 hrs.\n3. Deploy marshals at high-footfall stations.\n4. Multilingual announcements required.\n5. Escalate disruptions above 5 minutes to OCC.\nStationFootfallAction\nAluvaHigh2 Marshals\nKaloorHighQueue Control\nMG RoadMediumAnnouncements\nSN JunctionHighSupervision\nIssued by: Chief Operations Manager, KMRL\nFor project testing/demo purposes.",
+      "chunks": [
+        "Kochi Metro Rail Limited (KMRL)\nTrain Operations Circular\nReference No: KMRL/OPS/2026/0417\nDate: 17 April 2026\nSubject: Revised Peak Hour Train Schedule and Passenger\nAssistance Measures\nRevised peak hour services will be implemented from 20 April 2026. Additional train frequency shall\noperate between Aluva and SN Junction during rush hours.\nInstructions:\n1. Morning peak frequency every 6 minutes from 07:00 to 10:00 hrs.\n2. Evening peak frequency every 6 minutes from 17:00 to 20:30 hrs.\n3. Deploy marshals at high-footfall stations.\n4. Multilingual announcements required.\n5. Escalate disruptions above 5 minutes to OCC.\nStationFootfallAction\nAluvaHigh2 Marshals\nKaloorHighQueue Control\nMG RoadMediumAnnouncements\nSN JunctionHighSupervision\nIssued by: Chief Operations Manager, KMRL\nFor project testing/demo purposes."
+      ],
+      "summary": "Kochi Metro Rail Limited (KMRL) Train Operations Circular Reference No: KMRL/OPS/2026/0417 Date: 17 April 2026 Subject: Revised Peak Hour Train Schedule and Passenger Assistance Measures Revised peak hour services will b..."
+    }
+  ],
+  "vectorIndex": []
+}

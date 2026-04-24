@@ -1,0 +1,85 @@
+{
+  "info": {
+    "name": "KMRL Admin Login",
+    "_postman_id": "7c1b4c8e-5a6f-4db9-b0c2-3e5f2d8a9f10",
+    "description": "Postman collection for admin login in KMRL IntelliDocX",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Admin Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@kmrl.com\",\n  \"password\": \"Admin@123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/v1/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "login"
+          ]
+        },
+        "description": "Logs in using seeded admin credentials and returns JWT token + user object"
+      },
+      "response": [],
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('Response has token', function () {",
+              "  const responseBodyJson = pm.response.json();",
+              "  pm.expect(responseBodyJson).to.have.property('token');",
+              "  pm.expect(responseBodyJson.token).to.be.a('string').and.not.empty;",
+              "});",
+              "",
+              "pm.test('Response has user details', function () {",
+              "  const responseBodyJson = pm.response.json();",
+              "  pm.expect(responseBodyJson).to.have.property('user');",
+              "  pm.expect(responseBodyJson.user).to.have.property('email', 'admin@kmrl.com');",
+              "});",
+              "",
+              "pm.test('Save auth token to collection variable', function () {",
+              "  const responseBodyJson = pm.response.json();",
+              "  if (responseBodyJson.token) {",
+              "    pm.collectionVariables.set('authToken', responseBodyJson.token);",
+              "  }",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "authToken",
+      "value": ""
+    }
+  ]
+}

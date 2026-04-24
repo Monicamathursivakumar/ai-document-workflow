@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --brand-teal: #2FA4A9;
+  --brand-teal-light: #3FB7C1;
+  --brand-teal-dark: #1F7F86;
+
+  --bg-main: #F2F2F2;
+  --bg-main-soft: #F5F5F5;
+  --bg-dropdown: #E6E6E6;
+  --bg-white: #FFFFFF;
+
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-subtle: #D0D0D0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+body.theme-dark {
+  --bg-main: #0f172a;
+  --bg-main-soft: #111827;
+  --bg-dropdown: #1f2937;
+  --bg-white: #111827;
+  --text-primary: #e5e7eb;
+  --text-secondary: #94a3b8;
+  --border-subtle: #334155;
+}
+
+body.theme-dark,
+body.theme-dark #root {
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+/* Global neutral surfaces */
+.bg-gray-50 { background-color: var(--bg-main-soft) !important; }
+.bg-gray-100 { background-color: var(--bg-dropdown) !important; }
+.bg-white { background-color: var(--bg-white) !important; }
+
+/* Text colors */
+.text-gray-900,
+.text-gray-800,
+.text-gray-700,
+.text-black { color: var(--text-primary) !important; }
+
+.text-gray-600,
+.text-gray-500,
+.text-gray-400 { color: var(--text-secondary) !important; }
+
+/* Borders/dividers */
+.border-gray-200,
+.border-gray-300,
+.border,
+.divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--border-subtle) !important;
+}
+
+/* Brand button/background overrides */
+.bg-blue-600,
+.bg-indigo-600,
+.bg-cyan-600 { background-color: var(--brand-teal) !important; }
+
+.bg-blue-700,
+.bg-indigo-700,
+.bg-cyan-700 { background-color: var(--brand-teal-dark) !important; }
+
+.hover\:bg-blue-700:hover,
+.hover\:bg-indigo-700:hover,
+.hover\:bg-cyan-700:hover,
+.hover\:bg-blue-600:hover,
+.hover\:bg-indigo-600:hover,
+.hover\:bg-cyan-600:hover {
+  background-color: var(--brand-teal-dark) !important;
+}
+
+/* Brand text */
+.text-blue-600,
+.text-blue-700,
+.text-indigo-600,
+.text-indigo-700,
+.text-cyan-600,
+.text-cyan-700 { color: var(--brand-teal-dark) !important; }
+
+/* Brand soft pills */
+.bg-blue-50,
+.bg-indigo-50,
+.bg-cyan-50 { background-color: color-mix(in srgb, var(--brand-teal) 14%, white) !important; }
+
+/* Gradient bars/nav backgrounds */
+.from-blue-800,
+.from-blue-700,
+.from-indigo-800,
+.from-indigo-700 { --tw-gradient-from: var(--brand-teal-dark) !important; }
+
+.to-blue-600,
+.to-blue-500,
+.to-indigo-600,
+.to-indigo-500 { --tw-gradient-to: var(--brand-teal) !important; }
