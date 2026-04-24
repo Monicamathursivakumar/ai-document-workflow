@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Logo from "./ui/Logo";
+import { getServerBaseUrl } from "../lib/serverBaseUrl";
 
 const MotionDiv = motion.div;
 const MotionButton = motion.button;
 
-const getApiBase = () => import.meta.env.VITE_SERVER_URL || "http://localhost:5000";
-const getAuthBase = () => `${getApiBase()}/api/v1/auth`;
+const getAuthBase = () => `${getServerBaseUrl()}/api/v1/auth`;
 const getGoogleClientId = () => import.meta.env.VITE_GOOGLE_CLIENT_ID || "";
 
 const LoginPage = () => {

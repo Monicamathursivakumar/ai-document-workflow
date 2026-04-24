@@ -1,3 +1,5 @@
+import { getServerBaseUrl as getServerBaseUrlFromConfig } from "./serverBaseUrl";
+
 export const KMRL_DEPARTMENT_NAMES = [
   "Global Headquarters",
   "Metro Operations",
@@ -17,4 +19,4 @@ export const DEFAULT_DEPARTMENTS = KMRL_DEPARTMENT_NAMES.map((name, index) => ({
   name,
 }));
 
-export const getServerBaseUrl = () => import.meta.env.VITE_SERVER_URL || "http://localhost:5000";
+export const getServerBaseUrl = () => getServerBaseUrlFromConfig();
