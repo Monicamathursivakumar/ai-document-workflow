@@ -12,9 +12,9 @@ export const getServerBaseUrl = () => {
     return configured;
   }
 
-  // During local development, default to local backend.
+  // During local development, default to local backend (port 3001).
   if (typeof window !== "undefined" && /localhost|127\.0\.0\.1/.test(window.location.hostname)) {
-    return "http://localhost:5000";
+    return "http://localhost:3001";
   }
 
   // In deployed environments without explicit config, try same-origin.
@@ -22,5 +22,5 @@ export const getServerBaseUrl = () => {
     return normalizeBaseUrl(window.location.origin);
   }
 
-  return "http://localhost:5000";
+  return "http://localhost:3001";
 };
