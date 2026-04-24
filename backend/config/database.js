@@ -3,27 +3,33 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+const databaseUrl = process.env.DATABASE_URL;
+
+if (!databaseUrl) {
+  throw new Error("DATABASE_URL is required. Set it in your backend environment variables.");
+}
+
 /**
  * Sequelize instance initialization.
  * Configures the connection to the PostgreSQL database using environment variables.
  */
-const sequelize = new Sequelize(
-  process.env.DB_NAME || "document_processor",
-  process.env.DB_USER || "postgres",
-  process.env.DB_PASSWORD || "postgres",
-  {
-    host: process.env.DB_HOST || "localhost",
-    port: process.env.DB_PORT || 5432,
-    dialect: "postgres",
-    logging: false, // Set to console.log to see raw SQL queries
-    pool: {
-      max: 5,
-      min: 0,
-      acquire: 30000,
-      idle: 10000,
+const sequelize = new Sequelize(databaseUrl, {
+  dialect: "postgres",
+  protocol: "postgres",
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
     },
-  }
-);
+  },
+  logging: false, // Set to console.log to see raw SQL queries
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000,
+  },
+});
 
 const migrateUserRolesIfNeeded = async () => {
   const [roleTypeRows] = await sequelize.query(`

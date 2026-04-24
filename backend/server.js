@@ -81,23 +81,23 @@ const initializeApp = async () => {
         // Terminate the OCR Worker Pool (Vital for memory cleanup)
         try {
           await terminatePool();
-      console.log("✅ OCR Worker Pool terminated.");
-    } catch (err) {
-      console.error("❌ Error terminating OCR pool:", err);
-    }
+          console.log("✅ OCR Worker Pool terminated.");
+        } catch (err) {
+          console.error("❌ Error terminating OCR pool:", err);
+        }
 
-    try {
-      // Close DB connection
-      await disconnectDB();
-      console.log("✅ Database connection closed.");
-    } catch (err) {
-      console.error("❌ Error closing DB connection:", err);
-    }
+        try {
+          // Close DB connection
+          await disconnectDB();
+          console.log("✅ Database connection closed.");
+        } catch (err) {
+          console.error("❌ Error closing DB connection:", err);
+        }
 
-    console.log("👋 Goodbye!");
-    process.exit(0);
-  });
-};
+        console.log("👋 Goodbye!");
+        process.exit(0);
+      });
+    };
 
     // Listen for termination signals
     // SIGINT = Ctrl+C (Terminal)
